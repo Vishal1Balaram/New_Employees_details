@@ -9,7 +9,10 @@ const EmployeeFilter = props =>{
 
     return(
         <div className='filter-main-container' >
-             
+             <div className='Employee-details-container' >
+                <h1 className='employee-details-heading' >Employee Details:</h1>
+             </div>
+            <div>
             <label className='filter-label' >Filter by DOJ year:</label>
             <select className='select' value={props.selected} onChange={yearFiltered}  >
                 <option value='2019' >2019</option>
@@ -20,6 +23,7 @@ const EmployeeFilter = props =>{
                 <option value='2024' >2024</option>
                 <option value="ALL" >ALL</option>
             </select>
+            </div>
         </div>
     )
 }

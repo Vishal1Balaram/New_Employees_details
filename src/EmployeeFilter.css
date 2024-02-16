@@ -2,16 +2,31 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin-bottom: 10px;
     padding: 9px;
 }
-.filter-label{
-    color: rgb(99, 98, 99);
-    margin-right: 8px;
-    font-size: 20px;
+.Employee-details-container{
+    font-size: 10px;
+    width: 300px;
+    max-height: 40px;
+    text-align: center;
+}
+.employee-details-heading{
+    font-size: 15px;
+    color: rgb(52, 75, 158);
     font-weight: bold;
-    font-family: 'arial';
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+.filter-label{
+    font-size: 15px;
+    color: rgb(52, 75, 158);
+    font-weight: bold;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 20px;
 }
 .select{
     border: none;

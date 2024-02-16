@@ -45,6 +45,7 @@
     cursor: pointer;
     font-weight: bold;
     border-radius: 10px;
+    
 }
 .more-button:hover{
     color: red;
