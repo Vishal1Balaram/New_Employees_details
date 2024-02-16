@@ -6,7 +6,7 @@ import { useState } from "react"
 
 const EmployeeDetails = (props) =>{
     
-    const [filterByYear, setFilteredByYear] = useState('2021')
+    const [filterByYear, setFilteredByYear] = useState('2019')
 
     const getFilteredYear = (selectedYear) =>{
         setFilteredByYear(selectedYear)
@@ -20,7 +20,6 @@ const EmployeeDetails = (props) =>{
 
     if(filteredEmployees.length>0){
         noDataMessage = filteredEmployees.map((employee) => (<Employee key={employee.id} EmpId={employee.EmpId} EmpName={employee.EmpName} DOJ={employee.DOJ} /> ) )
-        
     }
 
 
@@ -29,7 +28,6 @@ const EmployeeDetails = (props) =>{
         <div className='employee-del-container' >
             <EmployeeFilter selected={filterByYear} onChangeFilter={getFilteredYear} />
             {noDataMessage}
-
         </div>
        
     )
