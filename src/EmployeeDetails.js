@@ -6,7 +6,7 @@ import { useState } from "react"
 
 const EmployeeDetails = (props) =>{
     
-    const [filterByYear, setFilteredByYear] = useState('2019')
+    const [filterByYear, setFilteredByYear] = useState('ALL')
 
     const getFilteredYear = (selectedYear) =>{
         setFilteredByYear(selectedYear)
@@ -26,13 +26,6 @@ const EmployeeDetails = (props) =>{
         noDataMessage = filteredEmployees.map((employee) => (<Employee key={employee.id} EmpId={employee.EmpId} EmpName={employee.EmpName} DOJ={employee.DOJ} /> ) )
         
     }
-    // if(filteredEmployees==="ALL"){
-    //     props.items.map((employee) => (<Employee key={employee.id} EmpId={employee.EmpId} EmpName={employee.EmpName} DOJ={employee.DOJ} /> ) )
-  
-    // }
-    // else if(filteredEmployees==="ALL"){
-    //     noDataMessage = props.items.map((employee) => (<Employee key={employee.id} EmpId={employee.EmpId} EmpName={employee.EmpName} DOJ={employee.DOJ} /> ) )
-    // }
     
     return(
         
