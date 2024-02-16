@@ -13,16 +13,27 @@ const EmployeeDetails = (props) =>{
     }
 
     const filteredEmployees = props.items.filter(employee => {
-        return employee.DOJ.getFullYear().toString() === filterByYear;
+        if(filterByYear==="ALL"){
+            return props.items.map((employee) => (<Employee key={employee.id} EmpId={employee.EmpId} EmpName={employee.EmpName} DOJ={employee.DOJ} /> ) )
+        }else{
+            return employee.DOJ.getFullYear().toString() === filterByYear;
+        }
     }) 
 
     let noDataMessage = <p>No Data Found</p>
 
     if(filteredEmployees.length>0){
         noDataMessage = filteredEmployees.map((employee) => (<Employee key={employee.id} EmpId={employee.EmpId} EmpName={employee.EmpName} DOJ={employee.DOJ} /> ) )
+        
     }
-
-
+    // if(filteredEmployees==="ALL"){
+    //     props.items.map((employee) => (<Employee key={employee.id} EmpId={employee.EmpId} EmpName={employee.EmpName} DOJ={employee.DOJ} /> ) )
+  
+    // }
+    // else if(filteredEmployees==="ALL"){
+    //     noDataMessage = props.items.map((employee) => (<Employee key={employee.id} EmpId={employee.EmpId} EmpName={employee.EmpName} DOJ={employee.DOJ} /> ) )
+    // }
+    
     return(
         
         <div className='employee-del-container' >
