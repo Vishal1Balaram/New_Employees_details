@@ -1,0 +1,59 @@
+.empDel-container {
+    
+    height: 80px;
+    width: 200px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #dddddd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+}
+.empDel-container:hover{
+    color: blue;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px black;
+}
+
+.EmpId-heading{
+    font-size: 13px;
+    margin: 3px;
+}   
+.span-empId{
+    color: red;
+}
+
+.emp-name{
+    color: black;
+    font-size: 15px;
+    margin: 3px;
+}
+.emp-doj{
+    color: #860b35;
+    font-size: 10px;
+    margin: 3px;
+}
+
+.more-button{
+    width: 50px;
+    height: 18px;
+    font-size: 6.5px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.more-button:hover{
+    color: red;
+}
+
+
+.more-button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 23px;
+}
