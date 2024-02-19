@@ -13,7 +13,7 @@ const Employee = (props) => {
 
     const moreAboutHandler = () =>{
         
-        console.log('More About Button is Clicked')
+        console.log('More Details Button is Clicked')
     }
     
     

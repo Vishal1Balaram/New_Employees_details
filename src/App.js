@@ -5,6 +5,7 @@ import emp from './Employees';
 import React, {useState} from 'react'
 import EmployeeDetails from './EmployeeDetails';
 import AddNewEmp from './AddNewEmp';
+import EmpForm from './EmpForm';
 
 
 const App = () => {
@@ -18,17 +19,24 @@ const App = () => {
 
   const [NewEmployeesData, AddEmployee] = useState(employees)
 
-  const getAddedEmpData = (employeeData) =>{
-    console.log(employeeData)
+  const getAddedEmpData = (new_employee_data) =>{
+
+    const New_Employee_Details = {
+                  ...new_employee_data,
+                  id: Math.random().toString()
+              }
+    console.log(New_Employee_Details)
 
     AddEmployee((previousEmployees) =>{
-      return [employeeData, ...previousEmployees ]
+      return [New_Employee_Details, ...previousEmployees ]
     } )
   }
 
   return (
     <div className='bg-main-container' >
-        <AddNewEmp onSavedEmpData={getAddedEmpData} />
+        <AddNewEmp >
+          <EmpForm onSaveEmployeedata = {getAddedEmpData} />
+        </AddNewEmp>
         <EmployeeDetails items={NewEmployeesData} />
        
     </div>
