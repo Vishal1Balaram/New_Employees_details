@@ -4,7 +4,6 @@ import EmpForm from "./EmpForm"
 const AddNewEmp = ({children}) =>{
 
     
-        
             return(
                 <div>
                     {children}

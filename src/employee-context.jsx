@@ -1,10 +1,32 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer, useState } from "react";
 
 
 export const EmployeeContext = createContext ({
     items: [],
     onSaveEmployeedata: () => {},
 });
+
+function employeeReducer(state, action){
+
+
+  const updatedEmployees = [...state]
+
+  if(action.type==='ADD_EXPENCE'){
+    const New_Employee_Details = {
+      ...action.payload,
+      id: Math.random().toString()
+  }
+  console.log(New_Employee_Details)
+      updatedEmployees.push(New_Employee_Details)
+    }
+
+    if(action.type === "REMOVE_EXPENCE"){
+
+    }
+    return updatedEmployees
+
+
+}
 
 
 export default function EmployeeContextProvider({ children }) {
@@ -15,20 +37,18 @@ export default function EmployeeContextProvider({ children }) {
         {EmpId: 2248, EmpName: "SS Sangeetha", DOJ: new Date(2023, 8, 9) },
       ]
 
-      const [NewEmployeesData, AddEmployee] = useState(employees)
+      const [NewEmployeesData, dispatcher] = useReducer(employeeReducer, employees)
 
-  const getAddedEmpData = (new_employee_data) =>{
-
-    const New_Employee_Details = {
-                  ...new_employee_data,
-                  id: Math.random().toString()
-              }
-    console.log(New_Employee_Details)
-
-    AddEmployee((previousEmployees) =>{
-      return [New_Employee_Details, ...previousEmployees ]
-    } )
-  }
+      // const [NewEmployeesData, AddEmployee] = useState(employees)
+      const getAddedEmpData = employee =>{
+        dispatcher(
+          {
+            type: "ADD_EXPENCE",
+            payload: employee
+          }
+        )
+      }
+  
 
   const contextValue = {
     items: NewEmployeesData,
