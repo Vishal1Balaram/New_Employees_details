@@ -1,7 +1,11 @@
 import './EmpForm.css'
 import React, {useState} from 'react'
+import { useContext } from 'react'
+import { EmployeeContext } from './employee-context'
 
 const EmpForm = (props) =>{
+
+    const {onSaveEmployeedata} = useContext(EmployeeContext)
 
     const [AddedEmpId, setEnteredEmpId] = useState('')
     const [AddedEmpName, setEnteredName] = useState('')
@@ -28,7 +32,8 @@ const EmpForm = (props) =>{
         }
 
         // console.log(employeeData)
-        props.onSaveEmployeedata(employeeData)
+        // props.onSaveEmployeedata(employeeData)
+        onSaveEmployeedata(employeeData)
         setEnteredEmpId('')
         setEnteredName('')
         setEnteredDOJ('')

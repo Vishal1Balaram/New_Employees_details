@@ -2,9 +2,12 @@
 import Employee from "./Employees.js"
 import EmployeeFilter from './EmployeeFilter'
 import './EmployeeDetails.css'
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { EmployeeContext } from "./employee-context.jsx"
 
 const EmployeeDetails = (props) =>{
+
+    const employeeCon = useContext(EmployeeContext)
     
     const [filterByYear, setFilteredByYear] = useState('ALL')
 
@@ -12,9 +15,9 @@ const EmployeeDetails = (props) =>{
         setFilteredByYear(selectedYear)
     }
 
-    const filteredEmployees = props.items.filter(employee => {
+    const filteredEmployees = employeeCon.items.filter(employee => {
         if(filterByYear==="ALL"){
-            return props.items.map((employee) => (<Employee key={employee.id} EmpId={employee.EmpId} EmpName={employee.EmpName} DOJ={employee.DOJ} /> ) )
+            return employeeCon.items.map((employee) => (<Employee key={employee.id} EmpId={employee.EmpId} EmpName={employee.EmpName} DOJ={employee.DOJ} /> ) )
         }else{
             return employee.DOJ.getFullYear().toString() === filterByYear;
         }

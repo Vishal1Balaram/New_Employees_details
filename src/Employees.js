@@ -24,7 +24,7 @@ const Employee = (props) => {
             <p className='emp-name' >EmpName: {props.EmpName}</p>
             <EmployeeDOJ DOJ={props.DOJ} />
             <div className='more-button-container' >
-                <button onClick={moreAboutHandler} className='more-button' >More Details</button>
+                <button onClick={moreAboutHandler} className='Delete-button' >Delete</button>
             </div>
         </Essentials>
 

@@ -39,16 +39,16 @@
     margin: 3px;
 }
 
-.more-button{
+.Delete-button{
     width: 50px;
     height: 18px;
-    font-size: 6.5px;
+    font-size: 7px;
     cursor: pointer;
     font-weight: bold;
     border-radius: 10px;
     
 }
-.more-button:hover{
+.Delete-button:hover{
     color: red;
 }
 
