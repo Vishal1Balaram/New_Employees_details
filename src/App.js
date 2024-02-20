@@ -11,8 +11,7 @@ import EmployeeContextProvider from './employee-context';
 
 
 const App = () => {
-
-
+  
   return (
     <EmployeeContextProvider>
       <div className='bg-main-container' >

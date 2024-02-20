@@ -11,11 +11,11 @@ function employeeReducer(state, action){
   const updatedEmployees = [...state]
 
   if(action.type==='ADD_EXPENCE'){
-    const New_Employee_Details = {
-      ...action.payload,
-      id: Math.random().toString()
-  }
-  console.log(New_Employee_Details)
+        const New_Employee_Details = {
+          ...action.payload,
+          id: Math.random().toString()
+      }
+      console.log(New_Employee_Details)
       updatedEmployees.push(New_Employee_Details)
     }
 

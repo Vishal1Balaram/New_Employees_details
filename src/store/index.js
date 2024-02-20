@@ -9,8 +9,6 @@ const employees = [
 
   const employeeReducer = (state= {items: employees}, action) => {
 
-
-
     const updatedEmployees = [...state.items]
   
     if(action.type==='ADD_EXPENCE'){

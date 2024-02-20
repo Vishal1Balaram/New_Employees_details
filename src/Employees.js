@@ -8,14 +8,9 @@ const Employee = (props) => {
 
     const EmpId = props.EmpId
     
-    // const [EmpName, setEmpName] =  useState(props.EmpName)
-    
-
     const moreAboutHandler = () =>{
-        
         console.log('More Details Button is Clicked')
     }
-    
     
     return(
         <Essentials className='empDel-container'  >
@@ -27,9 +22,6 @@ const Employee = (props) => {
                 <button onClick={moreAboutHandler} className='Delete-button' >Delete</button>
             </div>
         </Essentials>
-
-        
-    )
-}
+    )};
 
 export default Employee

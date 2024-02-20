@@ -2,7 +2,6 @@ import './EmployeeFilter.css'
 
 const EmployeeFilter = props =>{
 
-
     const yearFiltered =(event) =>{
         props.onChangeFilter(event.target.value)
     }
