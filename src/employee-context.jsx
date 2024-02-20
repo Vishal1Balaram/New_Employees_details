@@ -8,7 +8,6 @@ export const EmployeeContext = createContext ({
 
 function employeeReducer(state, action){
 
-
   const updatedEmployees = [...state]
 
   if(action.type==='ADD_EXPENCE'){
@@ -21,11 +20,9 @@ function employeeReducer(state, action){
     }
 
     if(action.type === "REMOVE_EXPENCE"){
-
+      
     }
     return updatedEmployees
-
-
 }
 
 
@@ -39,7 +36,6 @@ export default function EmployeeContextProvider({ children }) {
 
       const [NewEmployeesData, dispatcher] = useReducer(employeeReducer, employees)
 
-      // const [NewEmployeesData, AddEmployee] = useState(employees)
       const getAddedEmpData = employee =>{
         dispatcher(
           {
@@ -49,7 +45,6 @@ export default function EmployeeContextProvider({ children }) {
         )
       }
   
-
   const contextValue = {
     items: NewEmployeesData,
     onSaveEmployeedata: getAddedEmpData
@@ -58,6 +53,4 @@ export default function EmployeeContextProvider({ children }) {
   return <EmployeeContext.Provider value={contextValue} >
     {children}
   </EmployeeContext.Provider>
-
-
 }

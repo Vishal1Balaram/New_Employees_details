@@ -2,10 +2,11 @@ import './EmpForm.css'
 import React, {useState} from 'react'
 import { useContext } from 'react'
 import { EmployeeContext } from './employee-context'
+import { UseDispatch, useDispatch } from 'react-redux';
 
 const EmpForm = (props) =>{
 
-    const {onSaveEmployeedata} = useContext(EmployeeContext)
+    const dispatch = useDispatch();
 
     const [AddedEmpId, setEnteredEmpId] = useState('')
     const [AddedEmpName, setEnteredName] = useState('')
@@ -31,9 +32,7 @@ const EmpForm = (props) =>{
             DOJ: new Date(AddedDOJ)
         }
 
-        // console.log(employeeData)
-        // props.onSaveEmployeedata(employeeData)
-        onSaveEmployeedata(employeeData)
+        dispatch({type: "ADD_EXPENCE", payload: employeeData})
         setEnteredEmpId('')
         setEnteredName('')
         setEnteredDOJ('')
