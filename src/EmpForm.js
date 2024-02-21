@@ -3,6 +3,8 @@ import React, {useState} from 'react'
 import { useContext } from 'react'
 import { EmployeeContext } from './employee-context'
 import { UseDispatch, useDispatch } from 'react-redux';
+import { employeeActions } from './store';
+
 
 const EmpForm = (props) =>{
 
@@ -23,16 +25,18 @@ const EmpForm = (props) =>{
     const EmpDOJChangeHandler = (event) => {
         setEnteredDOJ(event.target.value);
     }
+    
 
     const submitHandler = (event) =>{
         event.preventDefault();
+        
         const employeeData = {
             EmpId: AddedEmpId,
             EmpName: AddedEmpName,
             DOJ: new Date(AddedDOJ)
         }
 
-        dispatch({type: "ADD_EXPENCE", payload: employeeData})
+        dispatch(employeeActions.addEmployee(employeeData))
         setEnteredEmpId('')
         setEnteredName('')
         setEnteredDOJ('')
@@ -58,7 +62,7 @@ const EmpForm = (props) =>{
                 </div>
             </div>
             <div className='button-container'>
-                <button type='submit'   className='add-button' >ADD</button>
+                <button type='submit'  className='add-button' >ADD</button>
             </div>
         </form>
     )

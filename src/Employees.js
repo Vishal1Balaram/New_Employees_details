@@ -14,7 +14,6 @@ const Employee = (props) => {
     
     return(
         <Essentials className='empDel-container'  >
-           
             <h1 className='EmpId-heading'>EmpId: <span className='span-empId' > {EmpId}</span> </h1>
             <p className='emp-name' >EmpName: {props.EmpName}</p>
             <EmployeeDOJ DOJ={props.DOJ} />

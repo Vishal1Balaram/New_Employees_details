@@ -1,4 +1,5 @@
 import {createStore} from 'redux'
+import {createSlice, configureStore} from '@reduxjs/toolkit'
 
 const employees = [
     {EmpId: 2244, EmpName: "Vishal Balaram", DOJ: new Date(2023, 9, 14) },
@@ -7,26 +8,27 @@ const employees = [
     {EmpId: 2248, EmpName: "SS Sangeetha", DOJ: new Date(2023, 8, 9) },
   ]
 
-  const employeeReducer = (state= {items: employees}, action) => {
+  const initialState = {items: employees}
 
-    const updatedEmployees = [...state.items]
-  
-    if(action.type==='ADD_EXPENCE'){
-      const New_Employee_Details = {
-        ...action.payload,
-        id: Math.random().toString()
-    };
-    console.log(New_Employee_Details)
-        updatedEmployees.push(New_Employee_Details)
-        return {items: updatedEmployees}
-      }
-  
-      if(action.type === "REMOVE_EXPENCE"){
+  const employeeSlice = createSlice({
+    name: 'employee',
+    initialState: initialState,
+    reducers: {
+      addEmployee(state,action){
+        const New_Employee_Details = {
+          ...action.payload,
+          id: Math.random().toString()
+      };
+          state.items.push(New_Employee_Details)
+      },
 
-      }
-      return state
-  }
+      removeEmployee(state, action){}
+    }
+  })
 
-  const employeeStore = createStore(employeeReducer)
+  const employeeStore = configureStore({
+    reducer: employeeSlice.reducer
+  })
 
   export default employeeStore;
+  export const employeeActions = employeeSlice.actions;

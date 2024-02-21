@@ -9,7 +9,7 @@ import {useSelector} from 'react-redux'
 const EmployeeDetails = (props) =>{
 
     const items = useSelector(state => state.items)
-    
+      
     const [filterByYear, setFilteredByYear] = useState('ALL')
 
     const getFilteredYear = (selectedYear) =>{
@@ -28,16 +28,13 @@ const EmployeeDetails = (props) =>{
 
     if(filteredEmployees.length>0){
         noDataMessage = filteredEmployees.map((employee) => (<Employee key={employee.id} EmpId={employee.EmpId} EmpName={employee.EmpName} DOJ={employee.DOJ} /> ) )
-  
     }
     
-    return(
-        
+    return(   
         <div className='employee-del-container' >
             <EmployeeFilter selected={filterByYear} onChangeFilter={getFilteredYear} />
             {noDataMessage}
-        </div>
-       
+        </div> 
     )
 }
 
